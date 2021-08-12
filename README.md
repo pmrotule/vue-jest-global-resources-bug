@@ -19,6 +19,10 @@ Error: Can't find stylesheet to import.
   stdin 1:9  root stylesheet
 ```
 
+## What's causing the issue
+
+While building this reproduction repository, even with relative paths inside a global stylesheet, the test was still green and started failing only after adding CSS modules in HelloWorld.vue.
+
 ## Steps to see the fix
 
 The branch `fix` is using my fork with the fix.
