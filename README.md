@@ -1,29 +1,29 @@
 # vue-jest-global-resources-bug
 
-## Project setup
+Vue project to reproduce the issue with `vue-jest` where relative paths imported inside a global stylesheet will throw an error. I fixed it in https://github.com/vuejs/vue-jest/pull/373.
+
+## Steps to reproduce
 
 ```
-yarn install
+yarn test
 ```
 
-### Compiles and hot-reloads for development
+It should throw the following error:
 
 ```
-yarn serve
+Error: Can't find stylesheet to import.
+  ╷
+1 │ @import './unit.scss';
+  │         ^^^^^^^^^^^^^
+  ╵
+  stdin 1:9  root stylesheet
 ```
 
-### Compiles and minifies for production
+## Steps to see the fix
 
-```
-yarn build
-```
+The branch `fix` is using my fork with the fix.
 
-### Lints and fixes files
-
-```
-yarn lint
-```
-
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- `git checkout fix`
+- `yarn install`
+- `yarn test`
+- The test should be green this time
