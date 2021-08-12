@@ -1,0 +1,11 @@
+@import './unit.scss';
+
+$breakpoint-mobile: 450px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1200px;
+
+:export {
+  mobile: strip-unit($breakpoint-mobile);
+  tablet: strip-unit($breakpoint-tablet);
+  desktop: strip-unit($breakpoint-desktop);
+}
